@@ -30,5 +30,41 @@ namespace Adonet
             connection.Close();
 
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection("Data Source=.;Initial Catalog=DB_IstanbulAkademi;Integrated Security=True");
+            connection.Open();
+            SqlCommand command = new SqlCommand("insert into TblCategory (CategoryName) Values (@p1)", connection);
+            command.Parameters.AddWithValue("@p1", txtCategoryName.Text);
+            command.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("Kategori başarılı bir şekilde eklendi");
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection("Data Source=.;Initial Catalog=DB_IstanbulAkademi;Integrated Security=True");
+            connection.Open();
+            SqlCommand command = new SqlCommand("delete from TblCategory where CategoryID=@p1", connection);
+            command.Parameters.AddWithValue("@p1", txtCategoryID.Text);
+            command.ExecuteNonQuery();
+
+            connection.Close();
+            MessageBox.Show("Kategori silindi");
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection("Data Source=.;Initial Catalog=DB_IstanbulAkademi;Integrated Security=True");
+            connection.Open();
+            SqlCommand command = new SqlCommand("update TblCategory set CategoryName=@p1 where CategoryID=@p2", connection);
+            command.Parameters.AddWithValue("@p1", txtCategoryName.Text);
+            command.Parameters.AddWithValue("@p2", txtCategoryID.Text);
+            command.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("Kategori başarılı bir şekilde güncellendi");
+        }
     }
 }
