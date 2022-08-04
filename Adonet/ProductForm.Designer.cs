@@ -201,6 +201,7 @@ namespace Adonet
             this.btnSave.TabIndex = 16;
             this.btnSave.Text = "Kaydet";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -210,6 +211,7 @@ namespace Adonet
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Sil";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -219,6 +221,7 @@ namespace Adonet
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Düzenle";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSearchName
             // 
@@ -228,6 +231,7 @@ namespace Adonet
             this.btnSearchName.TabIndex = 19;
             this.btnSearchName.Text = "Ara: \'Ürün Adı\'";
             this.btnSearchName.UseVisualStyleBackColor = true;
+            this.btnSearchName.Click += new System.EventHandler(this.btnSearchName_Click);
             // 
             // btnSearchStockLess
             // 
@@ -237,6 +241,7 @@ namespace Adonet
             this.btnSearchStockLess.TabIndex = 20;
             this.btnSearchStockLess.Text = "Ara: \'Stok <\'";
             this.btnSearchStockLess.UseVisualStyleBackColor = true;
+            this.btnSearchStockLess.Click += new System.EventHandler(this.btnSearchStockLess_Click);
             // 
             // btnSeacrhStockMore
             // 
@@ -246,6 +251,7 @@ namespace Adonet
             this.btnSeacrhStockMore.TabIndex = 21;
             this.btnSeacrhStockMore.Text = "Ara: \'Stok >\'";
             this.btnSeacrhStockMore.UseVisualStyleBackColor = true;
+            this.btnSeacrhStockMore.Click += new System.EventHandler(this.btnSeacrhStockMore_Click);
             // 
             // dtgProduct
             // 
@@ -286,6 +292,7 @@ namespace Adonet
             this.Controls.Add(this.label1);
             this.Name = "ProductForm";
             this.Text = "ProductForm";
+            this.Load += new System.EventHandler(this.ProductForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
